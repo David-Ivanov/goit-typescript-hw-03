@@ -57,7 +57,7 @@ abstract class House implements IHouse {
 
 class MyHouse extends House {
     public openDoor(key: Key): void {
-        if (key === this.key) {
+        if (key.getSignature() === this.key.getSignature()) {
             this.door = !this.door;
         }
     }
